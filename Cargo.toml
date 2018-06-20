@@ -1,0 +1,13 @@
+[package]
+name = "beer"
+version = "1.0.0"
+authors = ["Renaud Leroy <renaud.leroy@payfit.com>"]
+publish = false
+
+[dependencies]
+
+[dev-dependencies]
+pretty_assertions = "0.4.1"
+
+[profile.release]
+lto = true

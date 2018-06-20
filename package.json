@@ -1,0 +1,22 @@
+{
+  "name": "beer",
+  "version": "1.0.0",
+  "main": "node.js",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "build": "cargo build --target wasm32-unknown-emscripten",
+    "build:release": "yarn build --release",
+    "clean": "yarn run rimraf beer.js beer.wasm && cargo clean",
+    "prepare": "yarn build:release && yarn run copyfiles -f target/wasm32-unknown-emscripten/release/beer.{js,wasm} .",
+    "serve": "yarn prepare && node server.js",
+    "start": "node node.js",
+    "test": "cargo test"
+  },
+  "devDependencies": {
+    "copyfiles": "^2.0.0",
+    "finalhandler": "^1.1.1",
+    "rimraf": "^2.6.2",
+    "serve-static": "^1.13.2"
+  }
+}

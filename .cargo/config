@@ -1,0 +1,10 @@
+[target.wasm32-unknown-emscripten]
+rustflags = [
+    "-Clink-arg=-s", "-Clink-arg=EXPORTED_FUNCTIONS=['_beer_hello','_beer_add']",
+    "-Clink-arg=-s", "-Clink-arg=EXTRA_EXPORTED_RUNTIME_METHODS=['ccall','cwrap']",
+    "-Clink-arg=-s", "-Clink-arg=ASSERTIONS=0",
+    "-Clink-arg=-s", "-Clink-arg=ALLOW_MEMORY_GROWTH=1",
+    "-Clink-arg=-s", "-Clink-arg=MODULARIZE=1",
+    "-Clink-arg=-s", "-Clink-arg=DISABLE_EXCEPTION_CATCHING=1",
+]
+
